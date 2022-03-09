@@ -85,6 +85,12 @@ aside > p{
     color: var(--amber50);
 }
 
+aside > p:hover, aside > svg:hover{
+    color: var(--amber500);
+    fill: var(--amber500);
+}
+
 aside .settings,aside .settings + p{
     align-self: end;
 }
+
