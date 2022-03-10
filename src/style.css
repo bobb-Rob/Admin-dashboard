@@ -23,6 +23,7 @@ html{
     --amberDark: #81807eea;
     --myFont: 'Noto Sans', sans-serif;
     --projectColumnSize: 150px;
+    --projectRowSize: 140px;
 }
 
 
@@ -217,8 +218,8 @@ div.first-side{
     grid-column: 1 / 2;     
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto repeat(3, minmax(180px, var(--projectColumnSize)));
-    grid-auto-rows: minmax(180px, var(--projectColumnSize));
+    grid-template-rows: 20px repeat(3, minmax(100px, var(--projectRowSize)));
+    grid-auto-rows: minmax(100px, var(--projectRowSize));
     column-gap: 20px;  
     row-gap: 20px;  
     padding: 20px ;
@@ -257,4 +258,31 @@ div.first-side .projects:before{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
+.first-side .projects{
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    padding: 1rem;
+    justify-content: center;
+}
+
+
+.projects > div{
+    grid-column: 1 / 4;
+    font-size: 0.7rem;
+  
+}
+
+.projects svg{
+    fill: var(--amberBlack);
+    width: 20px;
+    height: 20px;
+}
+
+.projects div ~ svg{
+    justify-self: end; 
+    align-self: center; 
+}
+
 
