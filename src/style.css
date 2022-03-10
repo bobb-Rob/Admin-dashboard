@@ -19,7 +19,7 @@ html{
     --amber300: #fcd34d;
     --amber500: #f59e0b;
     --amber600: #d97706;
-    --amberBlack: #0e0601;
+    --amberBlack: #272626;
     --amberDark: #81807eea;
     --myFont: 'Noto Sans', sans-serif;
     --projectColumnSize: 150px;
@@ -131,7 +131,7 @@ header > div[name="search-icon"]{
 }
 
 header div[name^="search"] > svg{   
-    color: var(--amber100);
+   
     fill: var(--amberBlack); 
     width: 23px;
     height: 23px;
@@ -173,6 +173,7 @@ svg[name="bell-ring"] ~ div[class="avatar"]{
     font-weight: bold;
     font-family: var(--myFont);
     background-color: var(--amber500);
+    color: var(--amberBlack);
 }
 
 svg[name="bell-ring"] ~ h5{
@@ -223,22 +224,25 @@ div.first-side{
     column-gap: 20px;  
     row-gap: 20px;  
     padding: 20px ;
+    padding-top: 0px;
 }
 
 div.second-side{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 20px minmax(80px, 250px) 20px;
-    grid-auto-rows: minmax(180px, var(--projectColumnSize));
+    grid-template-rows: 20px auto 20px;
+    grid-auto-rows: auto;
     background-color: var(--amber100);
-    row-gap: 20px;  
-    padding: 20px;
+    row-gap: 10px;  
+    padding: 10px;
     padding-left: 0px;
+    
+    /* border: 2px solid red; */
 }
 
 div.first-side > h5{
     grid-column: 1 / 3;
-   
+   margin-top: 1rem;
 }
 
 div.first-side .projects,div.second-side .projects{   
@@ -268,10 +272,10 @@ div.first-side .projects:before{
 }
 
 
-.projects > div{
+.first-side .projects > div{
     grid-column: 1 / 4;
     font-size: 0.7rem;
-  
+    color: var(--amberBlack);  
 }
 
 .projects svg{
@@ -285,4 +289,17 @@ div.first-side .projects:before{
     align-self: center; 
 }
 
+.second-side > h5{
+    margin-top: .4rem;
+}
 
+.second-side .announcement,.second-side .trending{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(autofill, 1fr);
+    grid-auto-rows: 1fr;
+    font-size: 0.6rem;
+    color: var(--amberBlack);
+    padding: 5px;
+    padding-left: 15px;
+}
